@@ -1,0 +1,22 @@
+# Compiled binary files
+ct
+*.exe
+*.out
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and debug files
+*.log
