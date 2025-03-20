@@ -49,6 +49,7 @@ func main() {
 	currentOnly := false
 	showTime := false
 	showHidden := false
+	showVersion := false
 
 	// Manually parse command-line arguments
 	args := os.Args[1:] // Skip program name
@@ -57,6 +58,8 @@ func main() {
 		if strings.HasPrefix(arg, "-") {
 			for _, char := range arg[1:] {
 				switch char {
+				case 'v', 'V':
+					showVersion = true
 				case 'c':
 					currentOnly = true
 				case 't':
@@ -77,6 +80,11 @@ func main() {
 				os.Exit(1)
 			}
 		}
+	}
+
+	if showVersion {
+		fmt.Printf("ct version %s\n", version)
+		os.Exit(1)
 	}
 
 	// Record start time if -t is specified
